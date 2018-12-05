@@ -11,7 +11,7 @@ print(calibratedFrequency)
 
 //--- Part Two ---
 
-func findMultipleFrequencies(frequencyChanges: [Int], sum : Int, rollingSum  : inout [Int], multipleFrequencies: inout [Int] ) -> Int? {
+func findMultipleFrequencies(frequencyChanges: [Int], sum : Int, rollingSum : inout [Int], multipleFrequencies: inout [Int] ) -> Int? {
     
     var sum = sum
     
