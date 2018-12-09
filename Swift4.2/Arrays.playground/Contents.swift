@@ -2,53 +2,59 @@ import Foundation
 
 //creation
 
-var cities = [String]()
+var christmas = [String]()
 
-cities.append("Rovaniemi")
+christmas.append("🎁")
 
-cities += ["Tornio"]
+christmas += ["🍫"]
 
-let moreCities = ["Kemi", "Kemijärvi"]
-cities += moreCities
+let holidays = ["✈️", "👨‍👩‍👦‍👦"]
+christmas += holidays
 
-cities.insert("Enontekiö", at: 0)
+christmas.insert("🍻", at: 0)
 
-for city in cities {
-    print(city)
+for tradition in christmas {
+    print(tradition)
 }
 
-for (index, city) in cities.enumerated() {
-    print("\(index): \(city)")
+for (index, tradition) in christmas.enumerated() {
+    print("\(index): \(tradition)")
 }
 
-let tree : Character = "🎄"
+let tree = "🎄"
 var sixTrees = Array(repeating: tree, count: 6)
-
+christmas += sixTrees
 
 //access
 
-cities[0]
-cities[0...2]
+christmas[0]
+christmas[0...2]
 
-let firstCity = cities[cities.startIndex]
+let firstCity = christmas[christmas.startIndex]
 
-let lastCity = cities[cities.index(before: cities.endIndex)]
+let lastCity = christmas[christmas.index(before: christmas.endIndex)]
 
-let penultimateCity = cities[cities.index(cities.endIndex, offsetBy: -2)]
+let penultimateCity = christmas[christmas.index(christmas.endIndex, offsetBy: -2)]
 
-let invalidIndex = moreCities.index(moreCities.endIndex, offsetBy: -3)
-moreCities.indices.contains(invalidIndex)
+let invalidIndex = holidays.index(holidays.endIndex, offsetBy: -3)
+holidays.indices.contains(invalidIndex)
 
 
 //methods
 
-cities.count
-cities.isEmpty
+christmas.count
+christmas.isEmpty
 
-let initials = cities.map { $0.first! }
-print(initials)
+let santify = christmas.map { $0 + "🎅"  }
+print(santify)
 
-let allLetterCount = cities.reduce(0,{ $0 + $1.count })
-let allLetterCountVerbose = cities.reduce(0,{ total, city in total + city.count })
-print(allLetterCount,allLetterCountVerbose)
+let numberOfTrees = christmas.reduce(0,{
+    total, tradition in
+    if(tradition == "🎄"){
+        return total + 1
+    }
+    return total
+})
+
+print(numberOfTrees)
 
