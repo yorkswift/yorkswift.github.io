@@ -3,7 +3,8 @@ import Foundation
 //Strings
 
 
-// creation
+// Creation
+
 var santaClaus = ""
 
 santaClaus = "Ho"
