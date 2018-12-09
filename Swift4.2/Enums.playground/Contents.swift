@@ -11,7 +11,7 @@ enum NoseColour {
     case black
 }
 
-let reindeers = [Reindeer.rudolph,Reindeer.dasher]
+let reindeers: [Reindeer] = [.rudolph, .dasher]
 
 func noseColour(for reindeer:Reindeer) -> NoseColour {
     
@@ -27,6 +27,18 @@ func noseColour(for reindeer:Reindeer) -> NoseColour {
 for reindeer in reindeers {
     
     print(reindeer.rawValue, reindeer, noseColour(for:reindeer))
+
 }
 
 
+//Associated Values
+
+enum Helper  {
+    case elf
+    case reindeer(Reindeer)
+    case mrJingeling
+    case mrBingle
+    case mrsClaus
+}
+
+let helpers : [Helper] = [.reindeer(.rudolph), .elf]
