@@ -57,4 +57,3 @@ let numberOfTrees = christmas.reduce(0,{
 })
 
 print(numberOfTrees)
-
