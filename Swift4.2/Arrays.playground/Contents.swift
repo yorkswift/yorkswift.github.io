@@ -1,7 +1,8 @@
 import Foundation
 
 //creation
-
+var christmas1: [String] = Array()
+var christmas2 = ["hello"]
 var christmas = [String]()
 
 christmas.append("🎁")
@@ -38,6 +39,10 @@ let penultimateCity = christmas[christmas.index(christmas.endIndex, offsetBy: -2
 
 let invalidIndex = holidays.index(holidays.endIndex, offsetBy: -3)
 holidays.indices.contains(invalidIndex)
+
+for i in holidays.indices {
+    print(holidays[i])
+}
 
 
 //methods

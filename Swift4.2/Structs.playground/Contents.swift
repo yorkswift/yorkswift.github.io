@@ -7,12 +7,13 @@ struct GiftWrappedBox {
         return width * height * depth
     }
     
-    func open(){
+    func open() {
         
         guard let present = self.present else {
             print("Empty")
-            return
+           return
         }
+        
         print(present)
         
     }

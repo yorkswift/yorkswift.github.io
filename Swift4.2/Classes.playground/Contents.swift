@@ -5,6 +5,11 @@ class Toy {
     class func classMethod(){
         print("I'm a class method")
     }
+    
+    static func staticMethod(){
+        print("im a static method")
+    }
+    
 }
 
 class Train : Toy {
@@ -23,9 +28,10 @@ class Mallard : Train {
 
 
 Mallard.classMethod()
-
+Mallard.staticMethod()
 
 let present = Mallard()
 present.soundHorn()
+
 
 
