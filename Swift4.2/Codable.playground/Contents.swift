@@ -1,0 +1,36 @@
+import Foundation
+
+/// https://restcountries.eu/rest/v2/region/europe
+
+let json = """
+[{"name":"United Kingdom of Great Britain and Northern Ireland","topLevelDomain":[".uk"],"alpha2Code":"GB","alpha3Code":"GBR","callingCodes":["44"],"capital":"London","altSpellings":["GB","UK","Great Britain"],"region":"Europe","subregion":"Northern Europe","population":65110000,"latlng":[54.0,-2.0],"demonym":"British","area":242900.0,"gini":34.0,"timezones":["UTC-08:00","UTC-05:00","UTC-04:00","UTC-03:00","UTC-02:00","UTC","UTC+01:00","UTC+02:00","UTC+06:00"],"borders":["IRL"],"nativeName":"United Kingdom","numericCode":"826","currencies":[{"code":"GBP","name":"British pound","symbol":"£"}],"languages":[{"iso639_1":"en","iso639_2":"eng","name":"English","nativeName":"English"}],"translations":{"de":"Vereinigtes Königreich","es":"Reino Unido","fr":"Royaume-Uni","ja":"イギリス","it":"Regno Unito","br":"Reino Unido","pt":"Reino Unido","nl":"Verenigd Koninkrijk","hr":"Ujedinjeno Kraljevstvo","fa":"بریتانیای کبیر و ایرلند شمالی"},"flag":"https://restcountries.eu/data/gbr.svg","regionalBlocs":[{"acronym":"EU","name":"European Union","otherAcronyms":[],"otherNames":[]}],"cioc":"GBR"}]
+"""
+
+//
+
+struct Country: Codable {
+    var name: String
+    var capital: String
+}
+
+let data = Data(json.utf8)
+let decoder = JSONDecoder()
+
+do {
+    let europe = try decoder.decode([Country].self, from: data)
+    
+    print(europe.first)
+    
+} catch {
+    print("\(error)")
+}
+
+
+
+//do {
+//    let encoder = JSONEncoder()
+//    let data = try encoder.encode(user)
+//
+//} catch {
+//    print("\(error)")
+//}
