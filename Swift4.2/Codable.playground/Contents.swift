@@ -76,7 +76,10 @@ do {
 Nested Decoding with custom keys
 */
 
-typealias Countries = [Country]
+struct Region : Codable {
+    var acronym : String
+    var name : String
+}
 
 struct Country: Codable {
     
@@ -87,10 +90,7 @@ struct Country: Codable {
     }
 }
 
-struct Region : Codable {
-    var acronym : String
-    var name : String
-}
+typealias Countries = [Country]
 
 do {
     
