@@ -65,6 +65,7 @@ do {
     let europe = try decoder.decode(SimpleCountries.self, from: countryRawData)
     
     for county in europe {
+        
         print("\(county.capital) is the capital city of \(county.name)")
     }
     
