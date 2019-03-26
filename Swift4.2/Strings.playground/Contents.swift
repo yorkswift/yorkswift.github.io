@@ -19,7 +19,7 @@ let krisKringle: Character = "🎅"
 
 santaClaus.append(krisKringle)
 
-
+ 
 
 // conversion
 let day: NSNumber = 25
